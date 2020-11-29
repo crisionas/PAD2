@@ -1,0 +1,21 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+        mc:Ignorable="d"
+        Title="PadLaboratory " Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="TransactionViewBtn" Content="CREATE A TRANSACTION" HorizontalAlignment="Center" VerticalAlignment="Top" Height="79" Width="200" FontWeight="Bold" FontFamily="Times New Roman" Margin="0,217,0,0" FontSize="13" Click="TransactionView_Click" BorderBrush="#FF0C0606"/>
+        <Button Name="CurrencyViewBtn" Content="VIEW CURRENCY" Margin="572,217,59,0" VerticalAlignment="Top" Height="79" FontFamily="Times New Roman" FontWeight="Bold" FontSize="15" FontStyle="Normal" Click="CurrencyView_Click" BorderBrush="#FF0C0606"/>
+        <Button Name="AccountViewBtn" Content="VIEW ACCOUNT DETAILS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="79" Width="168" FontWeight="Bold" FontFamily="Times New Roman" Margin="59,217,0,0" FontSize="13" Click="AccountView_Click" BorderBrush="#FF0C0606"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,35,0,0" Text=" Welcome to our" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="30" Foreground="#FF0C0606"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,81,0,0" Text=" Bank System" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="55" Foreground="#FFB32828"/>
+        <Frame x:Name="MainWindowPage" HorizontalAlignment="Left" Width="800"/>
+    </Grid>
+</Window>

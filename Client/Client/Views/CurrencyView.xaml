@@ -1,0 +1,36 @@
+﻿<Page x:Class="Client.Views.CurrencyView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CurrencyView">
+
+    <Grid Background="White">
+        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="88" FontFamily="Times New Roman" FontWeight="Bold" FontSize="15" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" Foreground="#FF253B97" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold"><Run Text="Currency"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="305,98,0,0" Text="SELL" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="470,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Text="BUY"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,117,0,0" Text="EUR" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,138,0,0" Text="USD" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,159,0,0" Text="RUB" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Text="RON"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="UAH"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="Currency Time:"/>
+        <TextBlock HorizontalAlignment="Left" Margin="118,74,0,0" TextWrapping="Wrap" Name="Time" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="293,117,0,0"  Name="Eursell" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="293,138,0,0"  Name="USDSell" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="293,159,0,0"  x:Name="RUBSELL" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="293,180,0,0"  x:Name="RONSELL" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="293,199,0,0"  x:Name="UAHSELL" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="457,117,0,0"  x:Name="EURBUY" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="457,138,0,0"  x:Name="USDBUY" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="457,159,0,0"  x:Name="RUBBUY" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="457,180,0,0"  x:Name="RONBUY" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="457,199,0,0"  x:Name="UAHBUY" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,249,0,0"  Name="Message" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

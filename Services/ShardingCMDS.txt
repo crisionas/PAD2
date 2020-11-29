@@ -1,0 +1,39 @@
+mkdir \data\shard1\rs1 \data\shard1\rs2 \data\shard1\rs3
+
+start mongod --configsvr --replSet s1 --logpath \data\shard1\rs1\1.Log --dbpath \data\shard1\rs1 --port 27017
+start mongod --configsvr --replSet s1 --logpath \data\shard1\rs2\2.Log --dbpath \data\shard1\rs2 --port 27018
+start mongod --configsvr --replSet s1 --logpath \data\shard1\rs3\3.Log --dbpath \data\shard1\rs3 --port 27019
+
+mongo --port 27017
+
+config = { _id: "s1", members:[
+          { _id : 0, host : "localhost:27017" },
+          { _id : 1, host : "localhost:27018" },
+          { _id : 2, host : "localhost:27019" }]};
+
+rs.initiate(config);
+
+mkdir \data\shard2\rs1 \data\shard2\rs2 \data\shard2\rs3
+
+start mongod --shardsvr --replSet s2 --logpath \data\shard2\rs1\1.Log --dbpath \data\shard2\rs1 --port 27020
+start mongod --shardsvr --replSet s2 --logpath \data\shard2\rs2\1.Log --dbpath \data\shard2\rs2 --port 27021
+start mongod --shardsvr --replSet s2 --logpath \data\shard2\rs3\1.Log --dbpath \data\shard2\rs3 --port 27022
+
+mongo --port 27020
+config = { _id: "s2", members:[
+          { _id : 0, host : "localhost:27020" },
+          { _id : 1, host : "localhost:27021" },
+          { _id : 2, host : "localhost:27022" }]};
+
+rs.initiate(config);
+
+mongos --port 40000 --configdb s1/localhost:27017,localhost:27018,localhost:27019
+
+mongo --port 40000
+
+sh.addShard( "s2/localhost:27020,localhost:27021,localhost:27022")
+
+sh.enableSharding("PADLaboratories")
+
+sh.shardCollection("PADLaboratories.Accounts", { "key" : 1 } )
+sh.shardCollection("PADLaboratories.Transactions", { "key" : 1 } )
